@@ -1,0 +1,14 @@
+output_dir: ./reports
+verify_tls_default: true
+log_level: INFO
+
+devices:
+  - name: apc_rack_a
+    url: https://apc-rack-a.example.local
+    username: apcuser
+    password: change-me
+    verify_tls: false
+  - name: apc_rack_b
+    url: https://apc-rack-b.example.local
+    username: apcuser
+    password: change-me

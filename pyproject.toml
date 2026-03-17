@@ -1,0 +1,40 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "apc-report-tool"
+version = "1.0.0"
+description = "CLI tool to collect APC UPS telemetry and generate monitoring reports"
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "GPL-3.0-or-later" }
+authors = [
+  { name = "Frederic Delacour" }
+]
+dependencies = [
+  "beautifulsoup4>=4.12",
+  "pandas>=2.2",
+  "plotly>=5.20",
+  "requests>=2.31",
+  "PyYAML>=6.0",
+  "reportlab>=4.1",
+  "kaleido>=0.2.1",
+  "cairosvg>=2.7",
+]
+keywords = ["apc", "ups", "monitoring", "telemetry", "reporting", "devops", "sre"]
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
+  "Operating System :: OS Independent",
+  "Topic :: System :: Monitoring",
+]
+
+[project.scripts]
+apc-report = "apc_report.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
